@@ -34,6 +34,37 @@ items[itemActive].classList.add('active');
 const circles = document.getElementsByClassName('circle');
 let circleActive = 0;
 
+function myAutoplay(){
+    
+    items[itemActive].classList.remove('active')
+        
+    if(itemActive+1 === imagesArray.length){
+        itemActive = 0
+    } 
+
+    else {
+        itemActive++
+    }
+    
+    items[itemActive].classList.add('active')
+
+    circles[circleActive].classList.remove('active')
+
+    if(circleActive+1 === imagesArray.length){
+        circleActive = 0
+    }
+    
+    else {
+        circleActive++
+    }
+    
+    circles[circleActive].classList.add('active')
+
+}
+
+setInterval(myAutoplay,1000);
+console.log(myAutoplay)
+
 
 circles[circleActive].classList.add('active');
 
