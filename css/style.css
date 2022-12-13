@@ -78,3 +78,38 @@
 .circle.active, .circle:hover{
     background-color: rgba(174, 174, 174, 1); 
 }
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#auto-play {
+    background-color: green;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+}
+
+#auto-play:hover {
+    background-color: rgb(13, 112, 0);
+ 
+
+}
+
+#auto-pause {
+    background-color: orange;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+
+}
+
+#auto-pause:hover {
+   cursor: pointer;
+   background-color: rgb(255, 136, 0);
+  
+
+}
