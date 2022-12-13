@@ -1,4 +1,33 @@
-//Creo array immagini
+// FUNZIONE AUTOPLAY
+
+function myAutoplay(){
+    
+    items[itemActive].classList.remove('active')
+        
+    if(itemActive+1 === imagesArray.length){
+        itemActive = 0
+    } 
+
+    else {
+        itemActive++
+    }
+    
+    items[itemActive].classList.add('active')
+
+    circles[circleActive].classList.remove('active')
+
+    if(circleActive+1 === imagesArray.length){
+        circleActive = 0
+    }
+    
+    else {
+        circleActive++
+    }
+    
+    circles[circleActive].classList.add('active')
+
+}
+
 const imagesArray = [
     "01.webp",
     "02.webp",
@@ -34,71 +63,27 @@ items[itemActive].classList.add('active');
 const circles = document.getElementsByClassName('circle');
 let circleActive = 0;
 
-function myAutoplay(){
-    
-    items[itemActive].classList.remove('active')
-        
-    if(itemActive+1 === imagesArray.length){
-        itemActive = 0
-    } 
 
-    else {
-        itemActive++
-    }
-    
-    items[itemActive].classList.add('active')
-
-    circles[circleActive].classList.remove('active')
-
-    if(circleActive+1 === imagesArray.length){
-        circleActive = 0
-    }
-    
-    else {
-        circleActive++
-    }
-    
-    circles[circleActive].classList.add('active')
-
-}
 
 setInterval(myAutoplay,1000);
 console.log(myAutoplay)
-
+let button = document.getElementById('auto-play')
 
 circles[circleActive].classList.add('active');
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
+// FRECCIA NEXT
+
 next.addEventListener('click', function(){
-    
-    items[itemActive].classList.remove('active')
-        
-    if(itemActive+1 === imagesArray.length){
-        itemActive = 0
-    } 
 
-    else {
-        itemActive++
-    }
-    
-    items[itemActive].classList.add('active')
-
-    circles[circleActive].classList.remove('active')
-
-    if(circleActive+1 === imagesArray.length){
-        circleActive = 0
-    }
-    
-    else {
-        circleActive++
-    }
-    
-    circles[circleActive].classList.add('active')
+   myAutoplay();
 
 
 });
+
+// FRECCIA PREVIOUS
 
 prev.addEventListener('click', function(){
     
@@ -129,5 +114,3 @@ prev.addEventListener('click', function(){
 
 
 })
-
-
