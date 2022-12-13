@@ -28,6 +28,7 @@ function myAutoplay(){
 
 }
 
+
 const imagesArray = [
     "01.webp",
     "02.webp",
@@ -63,12 +64,22 @@ items[itemActive].classList.add('active');
 const circles = document.getElementsByClassName('circle');
 let circleActive = 0;
 
+let Autoplay = setInterval(myAutoplay,1000)
 
 
-setInterval(myAutoplay,1000);
+
+
+ document.getElementById('auto-play').addEventListener('click', function(){
+    
+    Autoplay = setInterval(myAutoplay,1000)
+
+})
+
+document.getElementById('auto-pause').addEventListener('click', function(){
+    clearInterval(Autoplay);
+})
+
 console.log(myAutoplay)
-let button = document.getElementById('auto-play')
-
 circles[circleActive].classList.add('active');
 
 const prev = document.querySelector('.prev');
